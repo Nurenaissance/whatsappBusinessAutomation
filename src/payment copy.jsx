@@ -322,7 +322,7 @@ const GPayUPIPayment = () => {
             {showQR && selectedPlan && (
               <div className="flex flex-col items-center space-y-4 p-6 bg-white rounded-lg border">
                 <img 
-                  src="/path-to-your-qr-code.png" 
+                  src="/path-to-your-qr-code.webp" 
                   alt="Payment QR Code" 
                   className="w-48 h-48"
                 />

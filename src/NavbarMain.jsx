@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Bell, User, ChevronDown } from 'lucide-react';
 import { useAuth } from './authContext'; // Assuming you have this hook
-import logo from "./assets/logo.png";
+import logo from "./assets/logo.webp";
 import io from 'socket.io-client';
 import axiosInstance from './api';
 

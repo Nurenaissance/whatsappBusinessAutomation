@@ -1,11 +1,11 @@
 import React from 'react';
 import './Blogs.css'; // Importing CSS styles
-import WhatsappChatbot from '../../assets/chatbot.jpeg';
-import WhatsappEngage from '../../assets/WhatsappEngage.jpeg';
-import BusinessGrowth from '../../assets/BusinessGrowth.jpeg';
-import Feedback from '../../assets/Feedback.png';
-import MarketingSt from '../../assets/marketingStrat.jpeg';
-import Segment from '../../assets/connection.png';
+import WhatsappChatbot from '../../assets/chatbot.webp';
+import WhatsappEngage from '../../assets/WhatsappEngage.webp';
+import BusinessGrowth from '../../assets/BusinessGrowth.webp';
+import Feedback from '../../assets/Feedback.webp';
+import MarketingSt from '../../assets/marketingStrat.webp';
+import Segment from '../../assets/connection.webp';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Footer from '../footer';
 const blogs = [ 

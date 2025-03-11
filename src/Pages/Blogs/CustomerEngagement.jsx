@@ -1,7 +1,7 @@
 import React from "react";
 import './new.css'; // Ensure this is the correct path to your CSS file
 import { motion, useScroll, useTransform } from 'framer-motion';
-import WhatsappEngage from '../../assets/WhatsappEngage.jpeg';
+import WhatsappEngage from '../../assets/WhatsappEngage.webp';
 import Footer from "../footer";
 const MaximizingCustomerEngagement = () => {
   const FloatingElement = ({ children, yOffset = 20, duration = 3 }) => {

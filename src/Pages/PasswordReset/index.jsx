@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../authContext';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.webp';
 import axiosInstance from '../../api';
 import axios from 'axios';
 import {whatsappURL}  from '../../Navbar';

@@ -13,7 +13,7 @@ import {
   X
 } from 'lucide-react';
 import ad from '../../assets/slider/ad.mp4';
-import dale from '../../assets/DALE.png';
+import dale from '../../assets/DALE.webp';
 const VideoSection = () => {
   const [showModal, setShowModal] = useState(false);
   return (

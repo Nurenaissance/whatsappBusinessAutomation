@@ -42,7 +42,7 @@ import {
   CreditCard // Added Calendar icon for Scheduled Messages
 } from "lucide-react";
 import { useAuth } from './authContext';
-import logo from "./assets/logo.png";
+import logo from "./assets/logo.webp";
 import io from 'socket.io-client';
 import axiosInstance from './api';
 import { fastURL} from './api.jsx';

@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import io from 'socket.io-client';
 import { useMediaQuery } from 'react-responsive';
 import axios from 'axios';
-import camera from "../../assets/camera.png";
-import qrbg from "../../assets/qrbg.png";
+import camera from "../../assets/camera.webp";
+import qrbg from "../../assets/qrbg.webp";
 import WhatsAppQRCode from '../Chatbot/WhatsappQrCode';
 import {whatsappURL}  from '../../Navbar';
 import { Card, CardContent } from '@/components/ui/card';
 import { MessageSquare, Zap, Lock, Smartphone, Bot, Send, Globe, Code, Camera } from 'lucide-react';
-import rightside from '../../assets/rightside.jpg';
+import rightside from '../../assets/rightside.webp';
 import { fastURL, djangoURL } from '../../api';
 
 // Floating particle effect component

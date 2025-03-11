@@ -4,8 +4,8 @@ import { ChevronLeft, ChevronRight, ArrowRight, Bot, MessageSquare, Zap } from '
 import { useNavigate } from 'react-router-dom';
 
 // Import your images and videos
-import broadcast from '../../assets/4574.png';
-import whatsapp from '../../assets/slider/whatsapp.png';
+import broadcast from '../../assets/4574.webp';
+import whatsapp from '../../assets/slider/whatsapp.webp';
 import flow from '../../assets/slider/flow.mp4';
 
 const slides = [

@@ -1,7 +1,7 @@
 import React from "react";
 import "./new.css";
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Outreach from '../../assets/BusinessGrowth.jpeg';
+import Outreach from '../../assets/BusinessGrowth.webp';
 import Footer from "../footer";
 const BusinessOutreachBlog = () => {
   const FloatingElement = ({ children, yOffset = 20, duration = 3 }) => {

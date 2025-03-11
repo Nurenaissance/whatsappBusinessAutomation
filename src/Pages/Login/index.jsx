@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Building2, Lock, Check } from 'lucide-react';
 import { useAuth } from '../../authContext';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.webp';
 import axiosInstance, { fastURL, djangoURL } from '../../api';
 import { auth, googleProvider } from '../../firebase';
 import { signInWithPopup } from 'firebase/auth';

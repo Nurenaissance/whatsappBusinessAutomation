@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Loader2 } from 'lucide-react';
-import logo from "../../assets/logo.png"
+import logo from "../../assets/logo.webp"
 import axios from 'axios';
 import { whatsappURL } from '../../Navbar';
 

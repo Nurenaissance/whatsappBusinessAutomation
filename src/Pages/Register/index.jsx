@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Check, ChevronLeft, ChevronRight, Building2, Lock, User, Mail, Phone, Globe, Zap,MessageSquare  } from 'lucide-react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.webp';
 import axiosInstance, { fastURL, djangoURL } from '../../api';
 import { auth, googleProvider } from '../../firebase';
-import register from '../../assets/resgister.png';
+import register from '../../assets/resgister.webp';
 import { signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth';
 import { useAuth } from '../../authContext';
 const FullScreenLoader = () => (

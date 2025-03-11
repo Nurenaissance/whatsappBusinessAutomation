@@ -3,16 +3,16 @@ import { motion, AnimatePresence,useScroll,useTransform } from 'framer-motion';
 import { MessageSquare, Clock, Bot, Zap, ShoppingCart, HeartHandshake, Calendar, ArrowRight, ExternalLink, Users, Link, MessageCircle, Star, Shield, Rocket, Check } from 'lucide-react';
 import { FaVolumeMute, FaVolumeUp, FaPlay } from "react-icons/fa";
 import { PopupButton } from 'react-calendly';
-import connection from "../../assets/connection.png";
-import chatbot from "../../assets/chatbot.jpeg";
-import security from "../../assets/security.png";
-import outreach from "../../assets/outreach.png";
+import connection from "../../assets/connection.webp";
+import chatbot from "../../assets/chatbot.webp";
+import security from "../../assets/security.webp";
+import outreach from "../../assets/outreach.webp";
 import { Button } from "@/components/ui/button";
-import Quick from '../../assets/quickresponse.jpg';
-import srRoyal from '../../assets/SR_Logo.jpg';
-import drishtee from '../../assets/drishte_logo.jpg';
-import gargi from '../../assets/gargi.jpg'
-import Scale from '../../assets/scale.jpg';
+import Quick from '../../assets/quickresponse.webp';
+import srRoyal from '../../assets/SR_Logo.webp';
+import drishtee from '../../assets/drishte_logo.webp';
+import gargi from '../../assets/gargi.webp'
+import Scale from '../../assets/scale.webp';
 import { useNavigate } from "react-router-dom";
 const FloatingElement = ({ children, yOffset = 20, duration = 3 }) => {
   const { scrollYProgress } = useScroll();

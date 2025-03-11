@@ -1,6 +1,6 @@
 import React from "react";
 import './new.css'; // Ensure this is the correct path to your CSS file
-import Feedback from '../../assets/Feedback.png';
+import Feedback from '../../assets/Feedback.webp';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Footer from "../footer";
 const HandleCustomerFeedback = () => {
