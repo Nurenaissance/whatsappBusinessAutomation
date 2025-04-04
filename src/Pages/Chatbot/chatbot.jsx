@@ -1397,6 +1397,44 @@ const Chatbot = () => {
     }
   };
 
+  // Add this function to calculate remaining time until session end (24 hours from last activity)
+const getRemainingSessionTime = (timestamp) => {
+  if (!timestamp) return "No activity";
+  
+  const now = new Date();
+  const lastActivity = new Date(timestamp);
+  const sessionEndTime = new Date(lastActivity.getTime() + 24 * 60 * 60 * 1000); // 24 hours after last activity
+  
+  // If session has already ended
+  if (now > sessionEndTime) {
+    return "0h 0m (expired)";
+  }
+  
+  // Calculate remaining time
+  const diffMs = sessionEndTime - now;
+  const diffHrs = Math.floor(diffMs / (1000 * 60 * 60));
+  const diffMins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+  
+  // Format the output
+  if (diffHrs > 0) {
+    return `${diffHrs}h ${diffMins}m`;
+  } else if (diffMins > 0) {
+    return `${diffMins}m`;
+  } else {
+    return "less than a minute";
+  }
+};
+// Add this useEffect to periodically refresh the status display
+useEffect(() => {
+  const intervalId = setInterval(() => {
+    // Force a re-render to update the activity status display
+    if (selectedContact) {
+      setSelectedContact({...selectedContact});
+    }
+  }, 60000); // Update every minute
+  
+  return () => clearInterval(intervalId);
+}, [selectedContact]);
   const handleNewChat = async () => {
     if (!newPhoneNumber.trim()) return;
 
@@ -1865,6 +1903,7 @@ const Chatbot = () => {
                         selectedContact.name,
                         selectedContact.last_name
                       )}
+                      
                     </div>
                   )}
                   <div>
@@ -2231,36 +2270,60 @@ const Chatbot = () => {
               </CardContent>
             </Card>
             <div className="cb-main flex-grow">
-              {selectedContact && (
-                <div className="cb-chat-header">
-                  {selectedContact && (
-                    <div className="cb-chat-contact-info">
-                      {profileImage && typeof profileImage === "string" ? (
-                        <img
-                          src={profileImage}
-                          alt="Profile"
-                          className="cb-profile-icon"
-                        />
-                      ) : (
-                        <div className={`cb-default-avatar`}>
-                          {getInitials(
-                            selectedContact.name,
-                            selectedContact.last_name
-                          )}
-                        </div>
-                      )}
-                      <div className="cb-contact-details">
-                        <span className="cb-contact-name">
-                          {selectedContact.name} {selectedContact.last_name}
-                        </span>
-                        <span className="cb-contact-phone">
-                          {selectedContact.phone}
-                        </span>
-                      </div>
-                    </div>
-                  )}
-                </div>
+            {selectedContact && (
+  <div className="cb-chat-header">
+    {selectedContact && (
+      <div className="cb-chat-contact-info">
+        <div className="flex items-center">
+          {profileImage && typeof profileImage === "string" ? (
+            <img
+              src={profileImage}
+              alt="Profile"
+              className="cb-profile-icon"
+            />
+          ) : (
+            <div className={`cb-default-avatar`}>
+              {getInitials(
+                selectedContact.name,
+                selectedContact.last_name
               )}
+            </div>
+          )}
+          <div className="cb-contact-details">
+            <div className="flex items-center">
+              <span className="cb-contact-name">
+                {selectedContact.name} {selectedContact.last_name}
+              </span>
+              {/* Active status indicator */}
+              <div className="ml-2 flex items-center">
+                {getInteractionStatus(selectedContact).isActive ? (
+                  <div className="flex items-center">
+                    <div className="w-2.5 h-2.5 bg-green-500 rounded-full mr-1.5 animate-pulse"></div>
+                    <span className="text-xs text-green-600 font-medium">Active</span>
+                  </div>
+                ) : (
+                  <div className="flex items-center">
+                    <div className="w-2.5 h-2.5 bg-red-500 rounded-full mr-1.5"></div>
+                    <span className="text-xs text-red-600 font-medium">Session Ended</span>
+                  </div>
+                )}
+              </div>
+            </div>
+            <span className="cb-contact-phone">
+              {selectedContact.phone}
+            </span>
+            <span className="text-xs text-gray-500">
+              {getInteractionStatus(selectedContact).isActive ? 
+                `Session ends in ${getRemainingSessionTime(getInteractionStatus(selectedContact).timestamp)}` : 
+                "Session has expired"}
+            </span>
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+)}
+
               <div className="cb-message-container" ref={messagesContainerRef}>
                 {showLoadMoreButton && hasMoreMessages && (
                   <div className="sticky top-0 bg-white z-10 p-2 text-center">
